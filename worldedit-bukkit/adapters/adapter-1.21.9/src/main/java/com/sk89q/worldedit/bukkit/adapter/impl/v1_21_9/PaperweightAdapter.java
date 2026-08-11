@@ -986,7 +986,7 @@ public final class PaperweightAdapter implements BukkitImplAdapter {
                                             Objects.requireNonNull(state);
                                             BlockEntity blockEntity = chunkAccess.getBlockEntity(pos);
                                             if (blockEntity != null) {
-                                                var tagValueOutput = TagValueOutput.createWithContext(ProblemReporter.DISCARDING, serverWorld.registryAccess());
+                                                var tagValueOutput = TagValueOutput.createWithContext(net.minecraft.util.ProblemReporter.DISCARDING, serverWorld.registryAccess());
                                                 blockEntity.saveWithId(tagValueOutput);
                                                 net.minecraft.nbt.CompoundTag tag = tagValueOutput.buildResult();
                                                 state = state.toBaseBlock(LazyReference.from(() -> (LinCompoundTag) toNative(tag)));
